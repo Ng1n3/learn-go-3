@@ -1,4 +1,4 @@
- .DEFAULT_GOAL := run
+.DEFAULT_GOAL := run
 
 .PHONY: fmt vet build run clean
 
@@ -7,8 +7,8 @@ fmt:
 vet:
 	go vet ./main.go
 clean:
-	rm -f blocks
+	rm -f functions
 build: clean
-	go build -o blocks ./main.go
+	go build -o functions ./main.go
 run: build
-	./blocks
+	./functions
