@@ -9,8 +9,8 @@ import (
 func main() {
 	lecture()
 	exercise.Exercise1()
-  exercise.Exercise2()
-  exercise.Exercise3()
+	exercise.Exercise2()
+	exercise.Exercise3()
 }
 
 func lecture() {
@@ -18,9 +18,9 @@ func lecture() {
 	totalWins := map[string]int{}
 
 	teams := map[string][]string{
-		"orcas":   []string{"Fred", "Ralph", "Bijou"},
-		"Lions":   []string{"Sarah", "Peter", "Billie"},
-		"Kittens": []string{"Waldo", "Raul", "Ze"},
+		"orcas":   {"Fred", "Ralph", "Bijou"},
+		"Lions":   {"Sarah", "Peter", "Billie"},
+		"Kittens": {"Waldo", "Raul", "Ze"},
 	}
 
 	fmt.Println(totalWins)
