@@ -106,6 +106,28 @@ func OrderPeople(p1, p2 Person) int {
 	return out
 }
 
+type Thinger interface {
+	Thing()
+}
+
+type ThingerInt int
+
+func (t ThingerInt) Thing() {
+	fmt.Println("ThingInt:", t)
+}
+
+type ThingerSlice []int
+
+func (t ThingerSlice) Thing() {
+	fmt.Println("ThingSlice:", t)
+}
+
+func Comparer[T comparable](t1, t2 T)  {
+	if t1 == t2 {
+    fmt.Println("equal!")
+  }
+}
+
 func main() {
 	//introduction to generics
 	var intStack Stack[int]
@@ -114,17 +136,30 @@ func main() {
 	intStack.Push(30)
 	v, ok := intStack.Pop()
 	fmt.Println(v, ok)
-	t1 := NewTree(cmp.Compare[int])
+	
+  t1 := NewTree(cmp.Compare[int])
 	t1.Add(10)
 	t1.Add(30)
 	t1.Add(15)
 	fmt.Println(t1.Contains(15))
 	fmt.Println(t1.Contains(40))
-	t2 := NewTree(OrderPeople)
+	
+  t2 := NewTree(OrderPeople)
 	t2.Add(Person{"Emmanue", 20})
 	t2.Add(Person{"Tom", 30})
 	t2.Add(Person{"Sandra", 22})
 	fmt.Println(t2.Contains(Person{"Tom", 20}))
 	fmt.Println(t2.Contains(Person{"Fred", 30}))
+
+  var a int = 10
+  var b int = 10
+  Comparer(a, b)
+
+  var a2 ThingerInt = 20
+  var b2 ThingerInt = 20
+  Comparer(a2, b2)
+
+  var a3 ThingerSlice = []int{1, 2, 3}
+  var b3 ThingerSlice = []int{1, 2, 3}
 	// fmt.Println(s.Contains(20))
 }
