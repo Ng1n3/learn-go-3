@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = "github.com/Ng1n3/tooling;person";
+
+message Person {
+  string name = 1;
+  int32 id = 2;
+  string email = 3;
+}

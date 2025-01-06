@@ -50,3 +50,4 @@ func main() {
 /*
 [lecture] -> updating compatible versions. From v1.0.0 upgrading to v1.1.0. Use go get github.com/<packagename>@1.1.0. Then run go goet -u=patch github.com/<packagename>. This takes it to v1.1.1. go get -u github.com/<packagename> to 1.2.1
 */
+
